@@ -1,0 +1,1 @@
+"""Copilot recommendation generation services."""

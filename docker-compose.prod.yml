@@ -1,0 +1,144 @@
+x-backend-env: &backend-env
+  APP_ENV: "${APP_ENV:-production}"
+  BACKEND_HOST: "0.0.0.0"
+  BACKEND_PORT: "8000"
+  LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+  SLOW_REQUEST_THRESHOLD_MS: "${SLOW_REQUEST_THRESHOLD_MS:-1000}"
+  DATABASE_URL: "${DATABASE_URL:?DATABASE_URL is required}"
+  REDIS_URL: "${REDIS_URL:?REDIS_URL is required}"
+  BACKEND_ADMIN_TOKEN: "${BACKEND_ADMIN_TOKEN:-}"
+  BACKEND_API_TOKEN: "${BACKEND_API_TOKEN:?BACKEND_API_TOKEN is required}"
+  FILE_STORAGE_BACKEND: "${FILE_STORAGE_BACKEND:-object}"
+  LOCAL_STORAGE_ROOT: "${LOCAL_STORAGE_ROOT:-backend/storage}"
+  OBJECT_STORAGE_PROVIDER: "${OBJECT_STORAGE_PROVIDER:-s3}"
+  OBJECT_STORAGE_ENDPOINT: "${OBJECT_STORAGE_ENDPOINT:?OBJECT_STORAGE_ENDPOINT is required in production}"
+  OBJECT_STORAGE_REGION: "${OBJECT_STORAGE_REGION:?OBJECT_STORAGE_REGION is required in production}"
+  OBJECT_STORAGE_BUCKET: "${OBJECT_STORAGE_BUCKET:?OBJECT_STORAGE_BUCKET is required in production}"
+  OBJECT_STORAGE_ACCESS_KEY_ID: "${OBJECT_STORAGE_ACCESS_KEY_ID:?OBJECT_STORAGE_ACCESS_KEY_ID is required in production}"
+  OBJECT_STORAGE_SECRET_ACCESS_KEY: "${OBJECT_STORAGE_SECRET_ACCESS_KEY:?OBJECT_STORAGE_SECRET_ACCESS_KEY is required in production}"
+  OBJECT_STORAGE_PUBLIC_BASE_URL: "${OBJECT_STORAGE_PUBLIC_BASE_URL:?OBJECT_STORAGE_PUBLIC_BASE_URL is required in production}"
+  OBJECT_STORAGE_PREFIX: "${OBJECT_STORAGE_PREFIX:-vision/}"
+  OBJECT_STORAGE_FORCE_PATH_STYLE: "${OBJECT_STORAGE_FORCE_PATH_STYLE:-true}"
+  DEEPSEEK_API_KEY: "${DEEPSEEK_API_KEY:-}"
+  DEEPSEEK_BASE_URL: "${DEEPSEEK_BASE_URL:-https://api.deepseek.com}"
+  DEEPSEEK_MODEL: "${DEEPSEEK_MODEL:-deepseek-chat}"
+  DEEPSEEK_TIMEOUT_SECONDS: "${DEEPSEEK_TIMEOUT_SECONDS:-20}"
+  COPILOT_RECOMMENDATION_MAX_ITEMS: "${COPILOT_RECOMMENDATION_MAX_ITEMS:-5}"
+  HOOGENDOORN_PROVIDER: "${HOOGENDOORN_PROVIDER:-mock}"
+  HOOGENDOORN_SYSTEM_ID: "${HOOGENDOORN_SYSTEM_ID:-}"
+  HOOGENDOORN_METRIC_CATALOG_PATH: "${HOOGENDOORN_METRIC_CATALOG_PATH:-backend/data/hoogendoorn_metric_catalog.private.json}"
+  HOOGENDOORN_TOKEN_URL: "${HOOGENDOORN_TOKEN_URL:-https://centralauthentication.hoogendoorn-iivo.cn/connect/token}"
+  HOOGENDOORN_API_BASE_URL: "${HOOGENDOORN_API_BASE_URL:-https://partnerapi.hoogendoorn-iivo.cn}"
+  HOOGENDOORN_CLIENT_ID: "${HOOGENDOORN_CLIENT_ID:-}"
+  HOOGENDOORN_CLIENT_SECRET: "${HOOGENDOORN_CLIENT_SECRET:-}"
+  HOOGENDOORN_SCOPE: "${HOOGENDOORN_SCOPE:-external.partner.api}"
+  HOOGENDOORN_API_TOKEN: "${HOOGENDOORN_API_TOKEN:-}"
+  HOOGENDOORN_TIMEOUT_SECONDS: "${HOOGENDOORN_TIMEOUT_SECONDS:-15}"
+  HOOGENDOORN_RETRY_ATTEMPTS: "${HOOGENDOORN_RETRY_ATTEMPTS:-4}"
+  HOOGENDOORN_RETRY_MIN_SECONDS: "${HOOGENDOORN_RETRY_MIN_SECONDS:-1}"
+  HOOGENDOORN_RETRY_MAX_SECONDS: "${HOOGENDOORN_RETRY_MAX_SECONDS:-8}"
+  HOOGENDOORN_SYNC_WINDOW_MINUTES: "${HOOGENDOORN_SYNC_WINDOW_MINUTES:-15}"
+  HOOGENDOORN_SYNC_OVERLAP_MINUTES: "${HOOGENDOORN_SYNC_OVERLAP_MINUTES:-5}"
+  VISION_INFERENCE_MODE: "${VISION_INFERENCE_MODE:-auto}"
+  VISION_MODEL_PATH: "${VISION_MODEL_PATH:-yolov8n.pt}"
+  VISION_QUEUE_KEY: "${VISION_QUEUE_KEY:-vision:tasks}"
+  VISION_MAX_UPLOAD_MB: "${VISION_MAX_UPLOAD_MB:-10}"
+  VISION_PROCESSING_TIMEOUT_MINUTES: "${VISION_PROCESSING_TIMEOUT_MINUTES:-30}"
+  VISION_CONFIDENCE_THRESHOLD: "${VISION_CONFIDENCE_THRESHOLD:-0.25}"
+  KB_HARVEST_ENABLED: "${KB_HARVEST_ENABLED:-true}"
+  KB_HARVEST_TIMEOUT_SECONDS: "${KB_HARVEST_TIMEOUT_SECONDS:-20}"
+  KB_SOURCE_FAO_BASE_URL: "${KB_SOURCE_FAO_BASE_URL:-}"
+  KB_SOURCE_FAO_API_KEY: "${KB_SOURCE_FAO_API_KEY:-}"
+  KB_SOURCE_EPA_BASE_URL: "${KB_SOURCE_EPA_BASE_URL:-}"
+  KB_SOURCE_EPA_API_KEY: "${KB_SOURCE_EPA_API_KEY:-}"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    image: intellifarm-frontend:latest
+    restart: unless-stopped
+    environment:
+      NODE_ENV: "production"
+      NEXTAUTH_URL: "${NEXTAUTH_URL:?NEXTAUTH_URL is required}"
+      NEXTAUTH_SECRET: "${NEXTAUTH_SECRET:?NEXTAUTH_SECRET is required}"
+      DATABASE_URL: "${DATABASE_URL:?DATABASE_URL is required}"
+      BACKEND_API_TOKEN: "${BACKEND_API_TOKEN:?BACKEND_API_TOKEN is required}"
+      BACKEND_INTERNAL_BASE_URL: "${BACKEND_INTERNAL_BASE_URL:-http://backend:8000}"
+      BACKEND_PUBLIC_BASE_URL: "${BACKEND_PUBLIC_BASE_URL:?BACKEND_PUBLIC_BASE_URL is required}"
+      API_BASE_URL: "${API_BASE_URL:-}"
+      NEXT_PUBLIC_API_BASE_URL: "${NEXT_PUBLIC_API_BASE_URL:-}"
+      DEEPSEEK_API_KEY: "${DEEPSEEK_API_KEY:-}"
+      DEEPSEEK_BASE_URL: "${DEEPSEEK_BASE_URL:-https://api.deepseek.com}"
+      DEEPSEEK_MODEL: "${DEEPSEEK_MODEL:-deepseek-chat}"
+      DEEPSEEK_TIMEOUT_SECONDS: "${DEEPSEEK_TIMEOUT_SECONDS:-20}"
+      COPILOT_RECOMMENDATION_MAX_ITEMS: "${COPILOT_RECOMMENDATION_MAX_ITEMS:-5}"
+      SEED_SUPER_ADMIN_PASSWORD: "${SEED_SUPER_ADMIN_PASSWORD:-}"
+      SEED_ADMIN_PASSWORD: "${SEED_ADMIN_PASSWORD:-}"
+      SEED_EXPERT_PASSWORD: "${SEED_EXPERT_PASSWORD:-}"
+      SEED_WORKER_PASSWORD: "${SEED_WORKER_PASSWORD:-}"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "node -e \"fetch('http://127.0.0.1:3000/login').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\"",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: intellifarm-backend:latest
+    restart: unless-stopped
+    environment: *backend-env
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "python -c \"import urllib.request,sys;sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health').status == 200 else 1)\"",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+  celery-worker:
+    image: intellifarm-backend:latest
+    restart: unless-stopped
+    environment: *backend-env
+    command: ["python", "-m", "celery", "-A", "app.scheduler.celery_app:celery_app", "worker", "--loglevel=INFO"]
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  celery-beat:
+    image: intellifarm-backend:latest
+    restart: unless-stopped
+    environment: *backend-env
+    command: ["python", "-m", "celery", "-A", "app.scheduler.celery_app:celery_app", "beat", "--loglevel=INFO"]
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      frontend:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    ports:
+      - "${NGINX_HTTP_PORT:-80}:80"
+      # - "${NGINX_HTTPS_PORT:-443}:443"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./docker/nginx/certs:/etc/nginx/certs:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1/backend-health >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10

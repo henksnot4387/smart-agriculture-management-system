@@ -1,0 +1,525 @@
+{
+  "version": "2026.03.11-kb-auto",
+  "generatedAt": "2026-03-11T19:30:00.059128Z",
+  "seedKeywords": [
+    "智能温室",
+    "番茄",
+    "连栋玻璃温室",
+    "环境控制",
+    "水肥一体化",
+    "植保",
+    "园艺",
+    "病害识别",
+    "生物防治",
+    "温湿度管理",
+    "EC",
+    "pH",
+    "CO2",
+    "VPD",
+    "灌溉策略",
+    "根区管理",
+    "病虫害综合治理",
+    "绿色防控"
+  ],
+  "categories": [
+    {
+      "id": "climate-control",
+      "name": "环境控制",
+      "description": "温度、湿度、蒸汽压亏缺(VPD)、通风与遮阳联动策略。"
+    },
+    {
+      "id": "fertigation",
+      "name": "水肥一体化",
+      "description": "灌溉频次、EC/pH、根区水分与养分协同管理。"
+    },
+    {
+      "id": "tomato-physiology",
+      "name": "番茄生理与栽培",
+      "description": "坐果、生理障碍、品质目标与作物负载调控。"
+    },
+    {
+      "id": "ipm",
+      "name": "植保与病虫害",
+      "description": "病虫害预警、综合防治(IPM)与生物防控。"
+    },
+    {
+      "id": "greenhouse-operations",
+      "name": "设施与运营",
+      "description": "连栋玻璃温室运营、监测指标与管理制度。"
+    },
+    {
+      "id": "digital-agri",
+      "name": "智能决策与数据",
+      "description": "传感器、模型、数字孪生与数据驱动策略。"
+    }
+  ],
+  "items": [
+    {
+      "id": "kb-001",
+      "categoryId": "climate-control",
+      "title": "温室番茄湿度偏高会显著增加叶霉病风险",
+      "summary": "多家设施园艺资料都强调，温室长期高湿、叶面结露和通风不足会抬高叶霉病等真菌病害发生概率。夜间湿度管理是关键控制点。",
+      "whyImportant": "当系统出现“湿度异常时长上升”时，这条知识可解释为什么病害风险分值同步升高。",
+      "actionablePoints": [
+        "夜间优先控露点，避免叶面长时间结露。",
+        "湿度持续偏高时，先评估通风策略，再评估灌溉时段。",
+        "将病害识别结果与湿度异常时段叠加分析。"
+      ],
+      "keywords": [
+        "pH",
+        "园艺",
+        "湿度",
+        "番茄",
+        "通风",
+        "露点",
+        "叶霉病",
+        "温室病害"
+      ],
+      "source": {
+        "title": "Using high throughput phenotyping to explore growth responses to water stress in greenhouse tomato",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4519188/",
+        "publisher": "NCBI/PMC",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-002",
+      "categoryId": "tomato-physiology",
+      "title": "番茄脐腐与钙吸收、灌溉波动强相关",
+      "summary": "脐腐并非单纯缺钙施肥问题，更常见于根区水分波动、蒸腾失衡和生长速度过快阶段。稳定灌溉和维持根区环境连续性是核心。",
+      "whyImportant": "可用于解释“EC/pH正常但果实问题上升”的现象，避免误判为配方错误。",
+      "actionablePoints": [
+        "将灌溉触发逻辑从固定时钟改为辐射/蒸腾联合触发。",
+        "重点时段监测排液比例与根区EC漂移。",
+        "脐腐上升时同步复盘温度与蒸腾压力。"
+      ],
+      "keywords": [
+        "钙",
+        "蒸腾",
+        "果实品质",
+        "番茄脐腐",
+        "灌溉稳定性"
+      ],
+      "source": {
+        "title": "Grow your own tomatoes",
+        "url": "https://www.rhs.org.uk/vegetables/tomatoes/grow-your-own",
+        "publisher": "RHS",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-003",
+      "categoryId": "fertigation",
+      "title": "EC/pH 需要结合作物阶段与气候负荷动态调整",
+      "summary": "同一套配方在不同辐射和蒸腾条件下效果差异明显。EC和pH应与作物阶段、排液数据和气候曲线联动管理。",
+      "whyImportant": "解释摘要中的“异常时长”时，可直接关联到水肥控制策略，而非仅看单点阈值。",
+      "actionablePoints": [
+        "建立按作物阶段的EC/pH目标区间。",
+        "将日照强度纳入灌溉频次自动化逻辑。",
+        "把排液EC偏差加入异常告警权重。"
+      ],
+      "keywords": [
+        "EC",
+        "pH",
+        "排液",
+        "水肥一体化",
+        "番茄营养管理"
+      ],
+      "source": {
+        "title": "Hydroponic Greenhouse Tomato Production",
+        "url": "https://ohioline.osu.edu/factsheet/hyg-1621",
+        "publisher": "Ohio State University Extension",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-004",
+      "categoryId": "digital-agri",
+      "title": "VPD 是连接温湿度与作物蒸腾响应的关键指标",
+      "summary": "温度和湿度单独看不够，VPD能更直接反映蒸腾驱动力。把VPD纳入控制目标，有助于减少“温湿度正常但作物状态异常”的情况。",
+      "whyImportant": "可解释摘要里“异常时长较高但温度均值正常”的看似矛盾现象。",
+      "actionablePoints": [
+        "新增VPD趋势曲线与阈值带。",
+        "把VPD越界持续时长纳入日报。",
+        "夜间控制策略加入最低VPD保护。"
+      ],
+      "keywords": [
+        "番茄",
+        "蒸腾",
+        "VPD",
+        "智能控制",
+        "温湿度耦合"
+      ],
+      "source": {
+        "title": "Tomato crop information",
+        "url": "https://www.fao.org/land-water/databases-and-software/crop-information/tomato/en/",
+        "publisher": "FAO",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-005",
+      "categoryId": "ipm",
+      "title": "设施番茄病虫害治理优先“预防+监测+生物防治”",
+      "summary": "现代IPM强调持续监测、阈值干预和生物防治组合，减少化学防治依赖并降低抗性风险。",
+      "whyImportant": "可以把病害识别次数从“事后统计”转为“触发防控流程”的前置指标。",
+      "actionablePoints": [
+        "将病害识别结果分级为观察、干预、紧急三档。",
+        "把温室分区与虫情板数据联动。",
+        "设立“连续两日异常”自动触发专家复核。"
+      ],
+      "keywords": [
+        "EC",
+        "IPM",
+        "生物防治",
+        "番茄植保",
+        "阈值管理",
+        "病虫害监测"
+      ],
+      "source": {
+        "title": "Integrated Pest Management (IPM) Principles",
+        "url": "https://www.epa.gov/safepestcontrol/integrated-pest-management-ipm-principles",
+        "publisher": "US EPA",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-006",
+      "categoryId": "greenhouse-operations",
+      "title": "连栋玻璃温室应把“分区控制”作为运营基本单元",
+      "summary": "大型连栋设施内部小气候差异明显，统一控制策略容易出现局部过控或欠控，分区数据和分区策略更可靠。",
+      "whyImportant": "解释为什么系统要在首页展示分区态势，而不是只展示全场平均值。",
+      "actionablePoints": [
+        "关键控制参数按分区设定目标值。",
+        "日报同时输出全场与分区偏差。",
+        "异常工单默认指向具体分区与设备。"
+      ],
+      "keywords": [
+        "小气候",
+        "分区控制",
+        "设施园艺",
+        "运营管理",
+        "连栋玻璃温室"
+      ],
+      "source": {
+        "title": "Protected cultivation in the Mediterranean climate",
+        "url": "https://www.fao.org/4/t0582e/t0582e09.htm",
+        "publisher": "FAO",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-007",
+      "categoryId": "fertigation",
+      "title": "灌溉决策应结合蒸发蒸腾与基质含水状态",
+      "summary": "仅靠固定时段灌溉会造成根区波动；以蒸发蒸腾和基质状态为依据能更稳定地维持根区环境。",
+      "whyImportant": "有助于解释“同样配方但异常时长不同”的根本原因。",
+      "actionablePoints": [
+        "把辐射、VPD与基质含水联合用于触发灌溉。",
+        "异常周重点复盘灌溉间隔而非单次水量。",
+        "引入排液率作为日常质量指标。"
+      ],
+      "keywords": [
+        "基质含水",
+        "根区管理",
+        "灌溉触发",
+        "蒸发蒸腾",
+        "水肥一体化"
+      ],
+      "source": {
+        "title": "Hydroponic Greenhouse Tomato Production",
+        "url": "https://ohioline.osu.edu/factsheet/hyg-1621",
+        "publisher": "Ohio State University Extension",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-008",
+      "categoryId": "tomato-physiology",
+      "title": "番茄坐果与昼夜温差、授粉环境密切相关",
+      "summary": "授粉与坐果不仅受品种和花序影响，也受温湿度与空气流动影响。控制策略应覆盖开花高敏窗口。",
+      "whyImportant": "当系统出现产量下降但环境均值正常时，可优先检查关键时段控制质量。",
+      "actionablePoints": [
+        "开花时段单独监测温湿度和通风策略。",
+        "将坐果率与时段环境曲线关联。",
+        "在摘要中加入“关键时段偏差”标记。"
+      ],
+      "keywords": [
+        "坐果",
+        "授粉",
+        "开花窗口",
+        "昼夜温差",
+        "番茄产量"
+      ],
+      "source": {
+        "title": "Growing tomatoes in home gardens",
+        "url": "https://extension.umn.edu/vegetables/growing-tomatoes",
+        "publisher": "University of Minnesota Extension",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-009",
+      "categoryId": "ipm",
+      "title": "病害防控要把“环境触发因子”纳入识别闭环",
+      "summary": "仅靠图像识别难以解释“为什么发生”，结合温湿度、灌溉、通风历史可以提升诊断与处置准确性。",
+      "whyImportant": "是从“识别”走向“可执行建议”的关键步骤。",
+      "actionablePoints": [
+        "每条病害识别记录自动附带近24h环境上下文。",
+        "对高风险病害生成分区优先级列表。",
+        "专家审批界面显示触发证据链。"
+      ],
+      "keywords": [
+        "证据链",
+        "专家审批",
+        "病害识别",
+        "上下文分析",
+        "环境触发因子"
+      ],
+      "source": {
+        "title": "What are biopesticides?",
+        "url": "https://www.epa.gov/ingredients-used-pesticide-products/what-are-biopesticides",
+        "publisher": "US EPA",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-010",
+      "categoryId": "digital-agri",
+      "title": "数字化温室建议应区分“监测结论”和“执行建议”",
+      "summary": "高质量摘要需要先给出可验证事实，再给出建议动作和风险提示，防止“建议先行、证据滞后”。",
+      "whyImportant": "直接提升用户对 AI 文本的信任度和可执行性。",
+      "actionablePoints": [
+        "摘要分层：事实层、风险层、行动层。",
+        "每条建议配套阈值与数据证据。",
+        "将建议默认状态设为待审批。"
+      ],
+      "keywords": [
+        "pH",
+        "AI摘要",
+        "可解释性",
+        "数字农业",
+        "行动建议",
+        "证据先行"
+      ],
+      "source": {
+        "title": "Using high throughput phenotyping to explore growth responses to water stress in greenhouse tomato",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4519188/",
+        "publisher": "NCBI/PMC",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-011",
+      "categoryId": "greenhouse-operations",
+      "title": "连栋温室运营应同时监控产量指标与资源效率",
+      "summary": "现代设施园艺运营评价通常包括单位面积产量、水肥利用效率和能源效率。单看产量可能掩盖系统风险。",
+      "whyImportant": "可帮助管理层理解为何系统同时展示环境与运营指标。",
+      "actionablePoints": [
+        "建立水、肥、能耗与产量联动看板。",
+        "将资源效率纳入周度复盘。",
+        "异常摘要增加“效率损失估计”。"
+      ],
+      "keywords": [
+        "产量",
+        "园艺",
+        "能耗",
+        "资源效率",
+        "运营指标",
+        "水肥利用率"
+      ],
+      "source": {
+        "title": "Current and future crop water requirements",
+        "url": "https://www.fao.org/4/s2022e/s2022e08.htm",
+        "publisher": "FAO",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-012",
+      "categoryId": "climate-control",
+      "title": "温室控制策略需关注昼夜切换的动态过渡",
+      "summary": "日出日落和灌溉切换时段是波动高发窗口，控制策略应避免突变。平滑过渡通常比强硬切换更稳定。",
+      "whyImportant": "解释摘要里“短时异常峰值”的来源，有助于把问题定位到控制策略而非设备故障。",
+      "actionablePoints": [
+        "建立日出前后控制策略模板。",
+        "关键切换时段启用高频采样。",
+        "异常时段自动生成控制回放。"
+      ],
+      "keywords": [
+        "动态策略",
+        "控制平滑",
+        "日出日落",
+        "环境控制",
+        "短时峰值"
+      ],
+      "source": {
+        "title": "Tomato crop water requirements",
+        "url": "https://www.fao.org/4/t0567e/t0567e0g.htm",
+        "publisher": "FAO",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-013",
+      "categoryId": "fertigation",
+      "title": "排液管理是判断水肥策略是否稳定的关键反馈",
+      "summary": "排液率与排液EC/pH可以反映根区环境是否偏离目标区间，是水肥闭环里的核心反馈信号。",
+      "whyImportant": "可用于解释 AI 摘要中的“异常持续”是否由根区累积造成。",
+      "actionablePoints": [
+        "将排液率纳入每日必看指标。",
+        "设置排液异常自动触发灌溉策略调整建议。",
+        "分区保存排液历史用于对比复盘。"
+      ],
+      "keywords": [
+        "EC",
+        "pH",
+        "排液率",
+        "根区EC",
+        "根区pH",
+        "水肥策略",
+        "闭环控制"
+      ],
+      "source": {
+        "title": "Tomato yield response to water",
+        "url": "https://www.fao.org/4/t0567e/t0567e0e.htm",
+        "publisher": "FAO",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-014",
+      "categoryId": "ipm",
+      "title": "病虫害防控建议应基于分区风险分层",
+      "summary": "在连栋温室内，不同分区风险水平不同。分层管理比全场统一喷防更高效，且更利于生物防控策略。",
+      "whyImportant": "直接支持系统当前“温室分区态势”设计思路。",
+      "actionablePoints": [
+        "按分区输出病害风险热度。",
+        "优先在高风险分区进行现场核查。",
+        "建议单中记录分区级处置优先级。"
+      ],
+      "keywords": [
+        "EC",
+        "分区风险",
+        "生物防控",
+        "病害热度",
+        "精准植保",
+        "连栋温室"
+      ],
+      "source": {
+        "title": "Integrated Pest Management (IPM) Principles",
+        "url": "https://www.epa.gov/safepestcontrol/integrated-pest-management-ipm-principles",
+        "publisher": "US EPA",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    },
+    {
+      "id": "kb-015",
+      "categoryId": "digital-agri",
+      "title": "AI建议应持续迭代阈值而非固定不变",
+      "summary": "季节变化、作物阶段变化会导致同一阈值在不同阶段表现不同，阈值应做分阶段管理并持续校正。",
+      "whyImportant": "可解释为什么系统后续需要专家审批和阈值回写。",
+      "actionablePoints": [
+        "阈值按阶段版本化管理。",
+        "每周复盘误报/漏报并更新阈值。",
+        "保留建议命中率用于模型评估。"
+      ],
+      "keywords": [
+        "pH",
+        "AI建议",
+        "模型评估",
+        "误报漏报",
+        "阈值迭代",
+        "阶段化控制"
+      ],
+      "source": {
+        "title": "Using high throughput phenotyping to explore growth responses to water stress in greenhouse tomato",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4519188/",
+        "publisher": "NCBI/PMC",
+        "fetchedAt": "2026-03-11T19:30:00.059128Z",
+        "type": "public_html"
+      },
+      "updatedAt": "2026-03-11T19:30:00.059128Z",
+      "lastAttemptAt": "2026-03-11T19:30:00.059128Z",
+      "fetchStatus": "success",
+      "lastError": null
+    }
+  ],
+  "harvest": {
+    "lastRunAt": "2026-03-11T19:30:00.059128Z",
+    "attempted": 15,
+    "succeeded": 15,
+    "failed": 0,
+    "successRate": 100.0
+  }
+}

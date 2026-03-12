@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --dashboard-bg: #f4f7f0;
+  --panel-bg: rgba(255, 255, 255, 0.82);
+  --panel-border: rgba(255, 255, 255, 0.74);
+  --metric-temperature: #ea580c;
+  --metric-humidity: #0f766e;
+  --metric-ec: #65a30d;
+  --metric-ph: #0369a1;
+}
+
+body {
+  @apply bg-surface text-ink antialiased;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(15, 118, 110, 0.12), transparent 32%),
+    radial-gradient(circle at 100% 100%, rgba(245, 158, 11, 0.15), transparent 30%);
+}
+
+.dashboard-surface {
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(15, 118, 110, 0.18), transparent 26%),
+    radial-gradient(circle at 90% 0%, rgba(245, 158, 11, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(244, 247, 240, 0.95));
+}
+
+.dashboard-hero {
+  background-image:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(239, 246, 245, 0.86));
+}
+
+.metric-card-fade {
+  animation: metric-card-rise 420ms ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.72;
+  }
+}
+
+@keyframes metric-card-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

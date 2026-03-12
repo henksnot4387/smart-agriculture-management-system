@@ -1,0 +1,44 @@
+.DS_Store
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+
+# Python
+__pycache__/
+*.pyc
+backend/venv/
+scripts/backend/venv/
+.venv/
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.prod.example
+!frontend/.env.local.example
+!backend/.env.example
+
+# Private release materials
+docs/private/
+docs/**/*.docx
+docs/**/*.xlsx
+docs/**/*.pdf
+backend/data/*.private.json
+
+# Logs
+*.log
+logs/
+.devlogs/
+celerybeat-schedule*
+
+# Runtime storage / models
+backend/storage/
+backend/models/
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json

@@ -1,0 +1,17 @@
+.git
+.gitignore
+.devlogs
+.DS_Store
+
+backend/venv
+backend/.pytest_cache
+backend/__pycache__
+backend/**/*.pyc
+backend/celerybeat-schedule.db
+
+frontend/node_modules
+frontend/.next
+frontend/.turbo
+
+docker-compose.yml
+docs
