@@ -199,6 +199,7 @@ bash scripts/verify.sh production
 - 云端上线清单：[`docs/production-go-live-checklist.md`](docs/production-go-live-checklist.md)
 - 从 0 到 1 启动与参数修改：[`docs/zero-to-one-setup-guide.md`](docs/zero-to-one-setup-guide.md)
 - 贡献说明：[`CONTRIBUTING.md`](CONTRIBUTING.md)
+- 商业授权说明：[`COMMERCIAL-LICENSE.md`](COMMERCIAL-LICENSE.md)
 - 私有资料处理说明：[`docs/private-materials.md`](docs/private-materials.md)
 - 市场价值测算：[`docs/market-value-estimate.md`](docs/market-value-estimate.md)
 
@@ -242,4 +243,4 @@ bash scripts/verify.sh production
 补充说明：
 
 - 该许可证属于“源码公开 / source-available”范畴，不属于传统 OSI 定义下的开源许可证
-- 如果你需要商用授权，请联系仓库维护者单独沟通
+- 如果你需要商用授权，请先阅读 [`COMMERCIAL-LICENSE.md`](./COMMERCIAL-LICENSE.md)
