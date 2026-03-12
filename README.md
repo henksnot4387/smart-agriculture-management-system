@@ -237,6 +237,7 @@ bash scripts/verify.sh production
 - 云端上线清单：[`docs/production-go-live-checklist.md`](docs/production-go-live-checklist.md)
 - 从 0 到 1 启动与参数修改：[`docs/zero-to-one-setup-guide.md`](docs/zero-to-one-setup-guide.md)
 - 贡献说明：[`CONTRIBUTING.md`](CONTRIBUTING.md)
+- 社区行为准则：[`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
 - 商业授权说明：[`COMMERCIAL-LICENSE.md`](COMMERCIAL-LICENSE.md)
 - 私有资料处理说明：[`docs/private-materials.md`](docs/private-materials.md)
 - 市场价值测算：[`docs/market-value-estimate.md`](docs/market-value-estimate.md)
