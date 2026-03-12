@@ -2,9 +2,11 @@
 
 > 面向连栋玻璃温室的多角色协同管理平台：数据接入、可视化看板、视觉识别、AI 建议、专家审批、工人执行、调度与可观测性一体化。
 
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
+[![License: PolyForm Noncommercial](https://img.shields.io/badge/License-PolyForm%20Noncommercial-orange.svg)](./LICENSE)
 [![Stack: Next.js + FastAPI](https://img.shields.io/badge/Stack-Next.js%20%2B%20FastAPI-111827)](#技术栈)
 [![Deploy: Docker Compose](https://img.shields.io/badge/Deploy-Docker%20Compose-2496ED)](#生产部署)
+
+> 许可说明：本仓库为公开源码项目，默认仅允许非商用使用、学习、研究和内部评估，不允许未经授权的商业使用。
 
 ## 项目简介
 
@@ -118,7 +120,7 @@ npm run seed:auth
 - `expert@example.local`
 - `worker@example.local`
 
-密码由你的本地 `.env` / `frontend/.env.local` 中 `SEED_*` 变量决定。开源模板默认只保留占位值，请在本地自行设置。
+密码由你的本地 `.env` / `frontend/.env.local` 中 `SEED_*` 变量决定。公开模板默认只保留占位值，请在本地自行设置。
 
 ### 6) 真实数据 + AI 智能解析关键变量
 
@@ -227,11 +229,17 @@ bash scripts/verify.sh production
 
 ## License
 
-本项目采用 [Apache License 2.0](./LICENSE)。
+本项目采用 [PolyForm Noncommercial License 1.0.0](./LICENSE)。
 
-对二次开发者的含义：
+对使用者的含义：
 
-- 允许商业使用、修改、分发
-- 需要保留许可证与版权声明
+- 允许学习、研究、内部验证和其他非商用用途
+- 不允许未经授权的商业使用、商业分发或面向商业场景的直接变现使用
+- 需要保留许可证与 `NOTICE` 中的声明
 - 如果你修改了项目，建议明确标注变更内容
 - 仓库内第三方依赖仍需分别遵守其原始许可证
+
+补充说明：
+
+- 该许可证属于“源码公开 / source-available”范畴，不属于传统 OSI 定义下的开源许可证
+- 如果你需要商用授权，请联系仓库维护者单独沟通
